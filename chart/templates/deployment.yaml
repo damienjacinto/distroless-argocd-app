@@ -23,7 +23,7 @@ spec:
       labels:
         app: {{ .Values.app.name }}
         app.kubernetes.io/name: {{ .Values.app.name }}
-        app.kubernetes.io/instance: {{ .Release.name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Values.app.name }}
