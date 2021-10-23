@@ -31,5 +31,5 @@ spec:
           imagePullPolicy: {{ default "IfnotPresent" .Values.image.pullPolicy }}
           ports:
             - name: http
-              conaitnerPort: {{ .Values.service.internalPort }}
+              containerPort: {{ .Values.service.internalPort }}
               protocol: TCP
