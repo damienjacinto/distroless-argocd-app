@@ -2,4 +2,5 @@
 app:
   name: application1
 image:
-  repository: busybox
+  repositoryBase: containous
+  repository: whoami
