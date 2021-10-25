@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - {{ default "websecure" .Values.ingress.publicEntryPoints }}
   routes:
-    - match:  Host(`{{ .Values.app.dns }}`)
+    - match:  Host(`{{ .Values.app.dns }}`) && PathPrefix(`{{ default "/" .Values.app.path }}`)
       kind: Rule
       services:
         - name: {{ .Values.app.name }}
