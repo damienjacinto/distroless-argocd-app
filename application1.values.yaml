@@ -11,3 +11,5 @@ service:
   internalPort: 5000
 ingress:
   enabled: true  
+buildpack:
+  enabled: true
