@@ -1,3 +1,4 @@
+{{- if .Values.app.path }}
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
@@ -5,4 +6,5 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-      - /{{ .Values.app.name }}
+      - /{{ .Values.app.path }}
+{{- end }}

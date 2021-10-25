@@ -3,6 +3,7 @@ app:
   name: application1
   gitUrl: https://github.com/damienjacinto/distroless-application1.git
   dns: app-distroless.ddns.net
+  path: application1
 image:
   repositoryBase: europe-central2-docker.pkg.dev/distroless-329216/distroless
   repository: node-distroless

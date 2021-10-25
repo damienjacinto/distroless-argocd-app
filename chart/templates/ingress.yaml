@@ -6,6 +6,11 @@ metadata:
 spec:
   entryPoints:
     - {{ default "websecure" .Values.ingress.publicEntryPoints }}
+  {{- if .Values.app.path }}
+  middleware:
+    name: {{ .Values.app.name }}
+    namespace: {{ .Values.app.name }}
+  {{- end }}
   routes:
     - match:  Host(`{{ .Values.app.dns }}`) && PathPrefix(`{{ default "/" .Values.app.path }}`)
       kind: Rule
