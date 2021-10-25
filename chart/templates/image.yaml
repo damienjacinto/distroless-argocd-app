@@ -6,7 +6,6 @@ metadata:
   namespace: kpack
 spec:
   serviceAccountName: kpack
-  imageTaggingStrategy: None
   tag: europe-central2-docker.pkg.dev/distroless-329216/distroless/{{ .Values.app.name }}
   builder:
     name: builder
