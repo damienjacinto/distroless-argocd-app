@@ -6,7 +6,7 @@ app:
   path: "/application1"
 image:
   repositoryBase: europe-central2-docker.pkg.dev/distroless-329216/distroless
-  repository: node-distroless
+  repository: application1
 service:
   internalPort: 5000
 ingress:
