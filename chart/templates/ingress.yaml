@@ -12,7 +12,7 @@ spec:
     namespace: {{ .Values.app.name }}
   {{- end }}
   routes:
-    - match:  Host(`{{ .Values.app.dns }}`) && PathPrefix(`{{ default "/" .Values.app.path }}`)
+    - match:  Host(`{{ .Values.app.dns }}`) && PathPrefix(`/{{ .Values.app.path }}`)
       kind: Rule
       services:
         - name: {{ .Values.app.name }}
