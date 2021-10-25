@@ -2,5 +2,7 @@
 app:
   name: application1
 image:
-  repositoryBase: containous
-  repository: whoami
+  repositoryBase: europe-central2-docker.pkg.dev/distroless-329216/distroless
+  repository: node-distroless:latest
+service:
+  internalPort: 5000

@@ -1,0 +1,19 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Values.app.name }}-public
+spec:
+  entryPoints:
+    - {{ default "websecure" .Values.ingress.publicEntryPoints }}
+  routes:
+    - match:  Host(`{{ .Values.app.dns }}`)
+      kind: Rule
+      services:
+        - name: {{ .Values.app.name }}
+          namespace: {{ .Values.app.name }}
+          port: {{ default "80" .Values.service.port }}
+          scheme: {{ default "http" .Values.service.scheme }}
+  tls:
+    secretName: {{ .Values.app.name }}
+{{- end }}
