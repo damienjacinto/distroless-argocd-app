@@ -9,7 +9,7 @@ spec:
   routes:
     - match:  Host(`{{ .Values.app.dns }}`) && PathPrefix(`{{ .Values.app.path }}`)
       {{- if .Values.app.path }}
-      middleware:
+      middlewares:
         name: {{ .Values.app.name }}
         namespace: {{ .Values.app.name }}
       {{- end }}
