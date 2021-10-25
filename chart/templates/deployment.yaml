@@ -18,12 +18,14 @@ spec:
       app: {{ .Values.app.name }}
       app.kubernetes.io/name: {{ .Values.app.name }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+      project: {{ .Values.project }}
   template:
     metadata:
       labels:
         app: {{ .Values.app.name }}
         app.kubernetes.io/name: {{ .Values.app.name }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        project: {{ .Values.project }}
     spec:
       containers:
         - name: {{ .Values.app.name }}

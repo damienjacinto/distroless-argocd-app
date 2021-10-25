@@ -6,3 +6,4 @@ ingress:
   enabled: false
 buildpack: 
   enabled: false
+project: distroless
