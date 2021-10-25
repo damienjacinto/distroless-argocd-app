@@ -1,0 +1,17 @@
+{{- if .Values.buildpack.enabled }}
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: {{ .Values.app.name }}
+spec:
+  tag: europe-central2-docker.pkg.dev/distroless-329216/distroless/{{ .Values.app.name }}
+  additionalTags: 
+  - europe-central2-docker.pkg.dev/distroless-329216/distroless/{{ .Values.app.name }}:latest
+  builder:
+    name: builder
+    kind: ClusterBuilder
+  source:
+    git:
+      url: {{ .Values.app.gitUrl }}
+      revision: main
+{{- end }}

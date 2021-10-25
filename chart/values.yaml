@@ -4,3 +4,5 @@ service:
   scheme: http
 ingress:
   enabled: false
+buildpack: 
+  enabled: false
