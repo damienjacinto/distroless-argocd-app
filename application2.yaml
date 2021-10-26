@@ -1,0 +1,15 @@
+---
+app:
+  name: application2
+  gitUrl: https://github.com/damienjacinto/distroless-application2.git
+  dns: app-distroless.ddns.net
+  path: "/application2"
+image:
+  repositoryBase: europe-central2-docker.pkg.dev/distroless-329216/distroless
+  repository: application2
+service:
+  internalPort: 5000
+ingress:
+  enabled: true  
+buildpack:
+  enabled: true
