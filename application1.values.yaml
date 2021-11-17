@@ -7,6 +7,7 @@ app:
 image:
   repositoryBase: europe-central2-docker.pkg.dev/distroless-329216/distroless
   repository: application1
+  pullPolicy: Always
 service:
   internalPort: 5000
 ingress:
